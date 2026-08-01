@@ -1,0 +1,24 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: sans-serif;
+  background-color: #000;
+}
+
+canvas#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* 15000vh provides a huge scroll area so the long camera movement is very smooth */
+.scroll-container {
+  height: 15000vh; 
+  width: 100%;
+}

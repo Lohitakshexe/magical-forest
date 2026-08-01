@@ -1,0 +1,6 @@
+/mnt/shyt/sh/sorry/dist/grass.glb
+/mnt/shyt/sh/sorry/dist/patch_of_grass.glb
+/mnt/shyt/sh/sorry/dist/realistic_pandasitting.glb
+/mnt/shyt/sh/sorry/public/grass.glb
+/mnt/shyt/sh/sorry/public/patch_of_grass.glb
+/mnt/shyt/sh/sorry/public/realistic_pandasitting.glb
