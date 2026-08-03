@@ -239,7 +239,7 @@ const skyBox = new THREE.Mesh(skyGeo, skyMat);
 skyBox.position.set(0, 40, -forestLength/2 - 2); // Start just after the door
 scene.add(skyBox);
 
-const groundTex = textureLoader.load('/magical_forest_ground.png');
+const groundTex = textureLoader.load(import.meta.env.BASE_URL + 'magical_forest_ground.png');
 groundTex.wrapS = THREE.RepeatWrapping;
 groundTex.wrapT = THREE.RepeatWrapping;
 groundTex.repeat.set(20, 40);
@@ -342,7 +342,7 @@ const fireflies = new THREE.Points(fireflyGeo, fireflyMat);
 scene.add(fireflies);
 
 // --- GLTF Models & 2D Pop-ups ---
-gltfLoader.load('/patch_of_grass.glb', (gltf) => {
+gltfLoader.load(import.meta.env.BASE_URL + 'patch_of_grass.glb', (gltf) => {
     let meshToInstance = null;
     gltf.scene.traverse((child) => {
         if (child.isMesh && !meshToInstance) meshToInstance = child;
@@ -402,7 +402,7 @@ function placeAllAnimals() {
 }
 
 const popUpMatPanda = new THREE.MeshBasicMaterial({ transparent: true, blending: THREE.MultiplyBlending, side: THREE.DoubleSide });
-textureLoader.load('/images/panda.png', (tex) => {
+textureLoader.load(import.meta.env.BASE_URL + 'images/panda.png', (tex) => {
     tex.colorSpace = THREE.SRGBColorSpace;
     popUpMatPanda.map = tex;
     const geo = new THREE.PlaneGeometry(3, 3);
@@ -415,7 +415,7 @@ textureLoader.load('/images/panda.png', (tex) => {
 });
 
 const popUpMatRabbit = new THREE.MeshBasicMaterial({ transparent: true, blending: THREE.MultiplyBlending, side: THREE.DoubleSide });
-textureLoader.load('/images/rabbit.png', (tex) => {
+textureLoader.load(import.meta.env.BASE_URL + 'images/rabbit.png', (tex) => {
     tex.colorSpace = THREE.SRGBColorSpace;
     popUpMatRabbit.map = tex;
     const geo = new THREE.PlaneGeometry(2, 2);
@@ -428,7 +428,7 @@ textureLoader.load('/images/rabbit.png', (tex) => {
 });
 
 const popUpMatFox = new THREE.MeshBasicMaterial({ transparent: true, blending: THREE.MultiplyBlending, side: THREE.DoubleSide });
-textureLoader.load('/images/fox.png', (tex) => {
+textureLoader.load(import.meta.env.BASE_URL + 'images/fox.png', (tex) => {
     tex.colorSpace = THREE.SRGBColorSpace;
     popUpMatFox.map = tex;
     const geo = new THREE.PlaneGeometry(2.5, 2.5);
@@ -441,7 +441,7 @@ textureLoader.load('/images/fox.png', (tex) => {
 });
 
 const popUpMatDeer = new THREE.MeshBasicMaterial({ transparent: true, blending: THREE.MultiplyBlending, side: THREE.DoubleSide });
-textureLoader.load('/images/deer.png', (tex) => {
+textureLoader.load(import.meta.env.BASE_URL + 'images/deer.png', (tex) => {
     tex.colorSpace = THREE.SRGBColorSpace;
     popUpMatDeer.map = tex;
     const geo = new THREE.PlaneGeometry(4, 4);
@@ -608,7 +608,7 @@ imageFiles.forEach((filename, index) => {
 
     // Load image natively to draw it into the rounded Canvas card
     const img = new Image();
-    img.src = `/images/${actualFilename}`;
+    img.src = `${import.meta.env.BASE_URL}images/${actualFilename}`;
     img.onload = () => {
         const tex = createRoundedCardCanvas(img, cleanText);
         
